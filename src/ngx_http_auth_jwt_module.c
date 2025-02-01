@@ -654,6 +654,7 @@ static char *get_jwt(ngx_http_request_t *r, ngx_str_t jwt_location)
     jwt_location.len -= strlen(COOKIE_PREFIX);
 
 #ifndef NGX_LINKED_LIST_COOKIES
+   
     if (ngx_http_parse_multi_header_lines(r, r->headers_in.cookie, &jwt_location, &jwtCookieVal) != NGX_DECLINED)
 
     {
